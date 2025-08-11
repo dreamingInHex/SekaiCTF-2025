@@ -1,4 +1,4 @@
-````markdown
+
 # 🏴 SekaiCTF 2025 — Category-Based Toolkit
 
 A **single-stop repo** containing tools, guides, scripts, payloads, and writeup space for **SekaiCTF 2025**  
@@ -147,4 +147,4 @@ This **category-first model** means during the CTF you just ask: *“What catego
 You don’t have to mentally map tools, scripts, and notes across different folders — everything lives together.  
 
 If you want, I can also make you a **pre-filled skeleton** with empty `guides.md`, `notes.md`, and a couple of placeholder scripts in each folder so the repo is ready to go on day one. That way you can just `git clone` and start.
-```
+
