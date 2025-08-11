@@ -173,5 +173,4 @@ SekaiCTF-2025-Prep/
 
 > “You don’t need every tool — you need every *idea*.”
 
-```
 
