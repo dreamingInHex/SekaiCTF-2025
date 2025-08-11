@@ -1,208 +1,158 @@
-```markdown
-# 🏴 SekaiCTF 2025 Preparation & Exploitation Toolkit
+Got it — for a **fast-paced CTF like SekaiCTF**, the **category-based architecture** is definitely more efficient.
 
-A comprehensive collection of **tools**, **guides**, **automation scripts**, and **cheat sheets** to assist with challenges in [SekaiCTF 2025](https://ctf.sekai.team/)  
-(Aug 15–17, 2025 — Online).
+When you’re in the middle of the competition, the main goal is **reducing context-switching** — so instead of remembering “oh, that web exploit script is in `/scripts/` and the XSS cheat sheet is in `/guides/`”, everything for Web is under `/web/`.
 
-This repository is built for **pre-event preparation** and **rapid in-event exploitation**, designed to speed up common tasks such as reconnaissance, analysis, and exploitation for all major CTF categories.
+Here’s the **optimized category-first layout** with a rewritten, battle-ready README:
 
 ---
 
-## 📅 Event Overview
+````markdown
+# 🏴 SekaiCTF 2025 — Category-Based Toolkit
 
-**Name:** SekaiCTF 2025  
-**Dates:** Aug 15–17, 2025 (48 hours, Online)  
-**Format:** Jeopardy-style (points-based, multiple independent challenges)  
-**Difficulty:** Beginner → Advanced  
-**Special Note:** Dual pre-qualifier for:
-- **10th XCTF Finals (2026) — China**
-- **MaltaCTF Finals (2025) — Malta**
-
-### Expected Challenge Categories
-From past years (and the 2025 announcements), we expect:
-
-- **Web Exploitation** — XSS, SQLi, SSRF, race conditions, CSP bypass, server misconfigs
-- **Cryptography** — Classical, modern, applied crypto attacks (RSA, ECC, hash collisions)
-- **Pwn / Binary Exploitation** — Buffer overflows, heap exploitation, ret2libc, Windows kernel
-- **Reverse Engineering** — Crackmes, obfuscated binaries, reversing protocols
-- **Miscellaneous / OSINT** — Steganography, forensics, open-source intelligence
-- **Programming / PPC** — Algorithmic problems, data parsing, automation
-- **Blockchain** — Solidity/Web3 exploitation, smart contract bugs (reentrancy, delegatecall, signature forgery)
-
-⚠ **Prize Bounty Alert** — 2025 includes **four blockchain challenges with USDT bounties** for the fastest solves.
+A **single-stop repo** containing tools, guides, scripts, payloads, and writeup space for **SekaiCTF 2025**  
+📅 **Aug 15–17, 2025 — Online, 48 Hours**
 
 ---
 
-## 📂 Repository Layout
+## 📂 Repository Structure (Category-First Layout)
+This structure is designed for **zero-search time** — all resources for a challenge type live in the same folder.
 
-The repository is structured for **speed** and **clarity** during the event:
-
-```
-
-SekaiCTF-2025-Toolkit/
+```plaintext
+SekaiCTF-2025/
 │
-├── tools/                      # Pre-built tools & binaries
-│   ├── crypto/                  # Crypto analysis helpers
-│   ├── web/                     # Web exploitation utilities
-│   ├── pwn/                     # Exploit frameworks/templates
-│   ├── rev/                     # Reverse engineering tools
-│   └── blockchain/              # Smart contract & Web3 exploitation
+├── web/                         # Web Exploitation
+│   ├── tools/                   # Prebuilt scanners, fuzzers, helpers
+│   ├── scripts/                 # Automation for XSS, SQLi, SSRF, etc.
+│   ├── guides.md                 # Common bypasses, payloads, writeups
+│   └── notes.md                  # Team scratchpad during event
 │
-├── guides/                     # Markdown-based knowledge base
-│   ├── web.md                   # Web exploitation tactics
-│   ├── crypto.md                # Crypto attacks and formulas
-│   ├── pwn.md                   # Binary exploitation techniques
-│   ├── reverse-engineering.md   # Static/dynamic reversing workflows
-│   ├── blockchain.md            # Ethereum/Solidity exploitation
-│   └── misc.md                  # Forensics, OSINT, stego
+├── crypto/                      # Cryptography
+│   ├── tools/
+│   ├── scripts/
+│   ├── guides.md
+│   └── notes.md
 │
-├── scripts/                    # Ready-to-run scripts
-│   ├── recon/                   # Enumeration & fingerprinting
-│   ├── exploitation/            # Payload generators, PoCs
-│   └── analysis/                 # Parsers, format analyzers
+├── pwn/                         # Binary Exploitation
+│   ├── tools/
+│   ├── scripts/
+│   ├── guides.md
+│   └── notes.md
 │
-├── writeups/                   # Store event notes and solutions
-└── README.md                   # This file
-
+├── rev/                         # Reverse Engineering
+│   ├── tools/
+│   ├── scripts/
+│   ├── guides.md
+│   └── notes.md
+│
+├── blockchain/                  # Smart Contracts & Blockchain
+│   ├── tools/
+│   ├── scripts/
+│   ├── guides.md
+│   └── notes.md
+│
+├── misc/                        # OSINT, Forensics, Stego, PPC
+│   ├── tools/
+│   ├── scripts/
+│   ├── guides.md
+│   └── notes.md
+│
+├── shared/                      # Cross-category utilities
+│   ├── recon/                   # Enumeration/recon tools
+│   ├── payloads/                 # Wordlists, exploit payloads
+│   └── templates/                # PoC starter templates
+│
+└── README.md
 ````
 
 ---
 
-## 🛠 Recommended Local Environment
+## 📖 Quick Start
 
-Before the CTF begins, **set up a clean, reproducible environment**.
+1. **Clone the repo**
 
-### Base OS / Environment
-- Ubuntu 22.04 LTS (or WSL2)
-- Python 3.11+ with `pipenv` or `virtualenv`
-- Docker & Docker Compose
-- Node.js 18+ (for blockchain/web tasks)
+   ```bash
+   git clone https://github.com/youruser/SekaiCTF-2025.git
+   cd SekaiCTF-2025
+   ```
+
+2. **Go to your category** (e.g., `cd web/`) and use:
+
+   * **`guides.md`** — quick payloads, bypasses, exploitation flow
+   * **`scripts/`** — automation for recon or exploitation
+   * **`tools/`** — ready-to-run binaries & utilities
+
+3. **Document your work** in `notes.md` so teammates can continue if you switch challenges.
+
+---
+
+## 🚀 Event Workflow
+
+1. **Pull latest changes** before starting work:
+
+   ```bash
+   git pull
+   ```
+2. **Check the scoreboard** → Pick a challenge in your strong category.
+3. **Run recon scripts** from the category folder (or `/shared/recon/` for general use).
+4. **Exploit** using tools/scripts already prepared.
+5. **Record everything** in `notes.md` or create a subfolder in `/writeups/` for a detailed PoC.
+6. **Push changes** to share with the team instantly:
+
+   ```bash
+   git add .
+   git commit -m "Update notes for Web challenge X"
+   git push
+   ```
+
+---
+
+## 🛠 Recommended Environment
+
+<details>
+<summary>Expand for setup</summary>
+
+### Base Environment
+
+* **OS:** Ubuntu 22.04 LTS / WSL2
+* **Languages:** Python 3.11+, Node.js 18+, Go (optional)
+* **Containerization:** Docker & docker-compose
 
 ### Core Packages
-**Install globally (or in a dedicated VM/container):**
-```bash
-sudo apt update && sudo apt install -y \
-    git build-essential python3 python3-pip python3-venv \
-    gdb binwalk exiftool jq netcat nmap socat \
-    curl wget unzip xxd file
-````
-
-**Python packages:**
 
 ```bash
+sudo apt install -y git build-essential python3 python3-pip python3-venv \
+gdb binwalk exiftool jq netcat nmap socat curl wget unzip xxd file
 pip install pwntools requests flask beautifulsoup4 pycryptodome
 ```
 
----
+### Extras
 
-## 🔍 Category-specific Tool Recommendations
+* **VS Code** with extensions for Python, Rust, Solidity
+* **Burp Suite** (community or pro)
+* **Ghidra** or **IDA Free** for RE
 
-### Web Exploitation
-
-* `Burp Suite` / `ZAP`
-* `ffuf`, `gobuster` — Directory brute-forcing
-* `sqlmap` — SQL injection automation
-* `nuclei` — Vulnerability scanning templates
-
-### Cryptography
-
-* `sagemath`
-* `RsaCtfTool`
-* `hashcat`, `john` — Password/hash cracking
-* `xortool` — XOR key recovery
-
-### Binary Exploitation / Reverse Engineering
-
-* `pwntools` — Exploit scripting
-* `gdb` with `gef` or `peda`
-* `radare2` / `cutter`
-* `ghidra` / `Binary Ninja` (if licensed)
-
-### Blockchain
-
-* `foundry` (`forge`, `cast`) — Smart contract development/testing
-* `hardhat` — Ethereum dev environment
-* `slither` — Static analysis
-* `ethers.js` / `web3.py` — Interaction scripts
-
-### Misc / Forensics
-
-* `binwalk`, `foremost`, `strings`
-* `steghide`, `zsteg` — Steganography
-* `volatility3` — Memory forensics
+</details>
 
 ---
 
-## 📖 Guide Philosophy
-
-Each `guides/*.md` file contains:
-
-* **Quick reference** — Commands, payloads, formulas
-* **Step-by-step exploitation patterns**
-* **Past SekaiCTF-specific quirks** — Lessons from previous years
-* **Links to deeper reading** — Docs, blog posts, whitepapers
-
-Example in `guides/web.md`:
-
-```markdown
-## XSS Quick Payloads
-- Basic: `<script>alert(1)</script>`
-- Event handler: `<img src=x onerror=alert(1)>`
-- Polyglot: `"><svg onload=confirm(1)>`
-...
-```
-
----
-
-## ⚡ Quick Start Workflow
-
-1. **Clone & prepare**:
-
-```bash
-git clone https://github.com/<your-username>/SekaiCTF-2025-Toolkit.git
-cd SekaiCTF-2025-Toolkit
-```
-
-2. **Install dependencies**:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. **Recon target quickly**:
-
-```bash
-python scripts/recon/dirbust.py http://target.ctf/
-```
-
-4. **Exploit / test**:
-
-```bash
-python scripts/exploitation/pwn_template.py target-ip 31337
-```
-
-5. **Log progress in `writeups/`**.
-
----
-
-## 📌 CTF Day Tips
-
-* **Speed > Perfection** — Solve what you can quickly, leave harder challenges for later.
-* **Take notes in real-time** — Even messy notes can be cleaned later for writeups.
-* **Watch the scoreboard** — Track which categories are bleeding points.
-* **Monitor Discord** — Sometimes clarifications or hints drop there.
-
----
-
-## 📚 Useful References
+## 📚 External Resources
 
 * [SekaiCTF Official](https://ctf.sekai.team/)
-* [CTFTime — SekaiCTF 2024](https://ctftime.org/event/2243/tasks/)
-* [HackTricks](https://book.hacktricks.xyz/)
+* [CTFTime: SekaiCTF 2024](https://ctftime.org/event/2243/tasks/)
 * [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
-* [Awesome CTF](https://github.com/apsdehal/awesome-ctf)
+* [HackTricks](https://book.hacktricks.xyz/)
 
 ---
 
-**Happy hacking & good luck!** 🐾
-*“Preparation wins before the first packet is sent.”*
+**🎯 Goal:** Spend less time searching for tools, more time solving challenges.
+*"Fast hands, faster brain."*
+
+```
+
+---
+
+This **category-first model** means during the CTF you just ask: *“What category is this?”* and jump straight in.  
+You don’t have to mentally map tools, scripts, and notes across different folders — everything lives together.  
+
+If you want, I can also make you a **pre-filled skeleton** with empty `guides.md`, `notes.md`, and a couple of placeholder scripts in each folder so the repo is ready to go on day one. That way you can just `git clone` and start.
+```
