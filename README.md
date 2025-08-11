@@ -1,11 +1,3 @@
-Got it — for a **fast-paced CTF like SekaiCTF**, the **category-based architecture** is definitely more efficient.
-
-When you’re in the middle of the competition, the main goal is **reducing context-switching** — so instead of remembering “oh, that web exploit script is in `/scripts/` and the XSS cheat sheet is in `/guides/`”, everything for Web is under `/web/`.
-
-Here’s the **optimized category-first layout** with a rewritten, battle-ready README:
-
----
-
 ````markdown
 # 🏴 SekaiCTF 2025 — Category-Based Toolkit
 
