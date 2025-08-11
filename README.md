@@ -1,8 +1,3 @@
-Alright — here’s an **expanded, more detailed and polished** `README.md` for your SekaiCTF 2025 prep repo.
-I made it **verbose** so a team member (even if they weren’t involved in prep) could jump in during the CTF and immediately understand how to use it.
-
----
-
 ```markdown
 # 🏴 SekaiCTF 2025 Preparation & Exploitation Toolkit
 
